@@ -149,14 +149,6 @@ Views or external services whose flows are required to generate a complete set o
   - **Test Context**: (Steps that happen in this external view as part of a cross-view test)
 ```
 
-**External Service** — for third-party systems with no local spec:
-
-```markdown
-- **External Service**: (Service name)
-  - **Description**: (Role in the flow)
-  - **Test Note**: Not directly tested. Mock or stub in tests.
-```
-
 ### Business Rules
 
 ```markdown
