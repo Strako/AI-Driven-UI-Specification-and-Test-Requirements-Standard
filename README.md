@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![AI](https://img.shields.io/badge/AI-powered-purple)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-orange)
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![Version](https://img.shields.io/badge/version-1.3.0-blue)
 
 A flexible, open framework that uses AI to define, document, and validate UI requirements and tests — enabling scalable and traceable UI design for automated workflows.
 
