@@ -161,14 +161,6 @@ _(repeat View-Level Field block as needed)_
 
 ---
 
-**External Service:**
-
-- **External Service**: (Service name — e.g. Google OAuth, Stripe, SendGrid)
-  - **Description**: (What role this service plays in the flow of this view)
-  - **Test Note**: Not directly tested. Mock or stub this service in tests. Consider its behavior when defining expected outcomes.
-
----
-
 ### Business Rules
 
 > Rules that govern the behavior of this view beyond individual field validations. Repeat the block for each rule.
