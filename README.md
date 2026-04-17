@@ -10,6 +10,43 @@ A flexible, open framework that uses AI to define, document, and validate UI req
 
 ---
 
+## Requirements
+
+Before using this standard you need to set up a **Playwright MCP power** in Kiro. The `test-execution` skill relies on Playwright MCP to drive a real browser — navigating pages, clicking elements, filling forms, taking screenshots, and capturing DOM snapshots. Without it, test execution cannot run.
+
+### Why Playwright MCP is needed
+
+| Capability used by the standard                       | Playwright MCP tool       |
+| ----------------------------------------------------- | ------------------------- |
+| Navigate to a URL (`BASE_URL` + route)                | `browser_navigate`        |
+| Click buttons, links, dropdowns                       | `browser_click`           |
+| Fill text inputs, passwords, emails                   | `browser_type`            |
+| Upload files                                          | `browser_file_upload`     |
+| Read the current DOM state to assert expected results | `browser_snapshot`        |
+| Capture visual evidence for the execution report      | `browser_take_screenshot` |
+| Resize the viewport for responsive tests              | `browser_resize`          |
+
+The `test-execution` skill activates the `playwright-testing` power at the start of every run (Step 0) and uses its tools for every browser interaction throughout the test suite. The `test-generation` skill does not require Playwright directly, but the test cases it produces are designed to be executed with it.
+
+### How to create the Playwright power in Kiro
+
+Open the Kiro chat and send the following prompt:
+
+> **Create a new power called `playwright-testing` based on the `@playwright/mcp` npm package. The power should expose a Playwright MCP server so I can navigate URLs, take screenshots, click elements, fill inputs, and capture DOM snapshots from the agent.**
+
+Kiro will scaffold the power for you, including the MCP server configuration that points to `@playwright/mcp`. Once the power is created and appears in your installed powers list, the `test-execution` skill will be able to activate it automatically.
+
+### Quick checklist
+
+1. **Node.js** — Make sure Node.js is installed on your machine (`@playwright/mcp` is an npm package).
+2. **Create the power** — Use the prompt above in Kiro chat.
+3. **Verify installation** — Open the Kiro Powers panel and confirm `playwright-testing` is listed and its MCP server is connected.
+4. **Set `BASE_URL`** — Create or update `vars.md` at the project root with your application URL (e.g. `BASE_URL = https://your-app.example.com`).
+
+Once these steps are complete you can use the full workflow: write a UI spec → generate test cases → fill test data → execute tests against your live application.
+
+---
+
 ## How It Works
 
 1. **Central Template Repository** — This repository is the single source of truth for screen specifications. Each view is documented in a structured Markdown file following `TEMPLATE.md`.
