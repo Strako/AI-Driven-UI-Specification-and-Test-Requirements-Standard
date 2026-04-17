@@ -41,7 +41,7 @@ Kiro will scaffold the power for you, including the MCP server configuration tha
 1. **Node.js** — Make sure Node.js is installed on your machine (`@playwright/mcp` is an npm package).
 2. **Create the power** — Use the prompt above in Kiro chat.
 3. **Verify installation** — Open the Kiro Powers panel and confirm `playwright-testing` is listed and its MCP server is connected.
-4. **Set `BASE_URL`** — Create or update `vars.md` at the project root with your application URL (e.g. `BASE_URL = https://your-app.example.com`).
+4. **Set `BASE_URL`** — Create  `vars.md` at the project root with your application URL (e.g. `BASE_URL = https://your-app.example.com`).
 
 Once these steps are complete you can use the full workflow: write a UI spec → generate test cases → fill test data → execute tests against your live application.
 
